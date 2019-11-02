@@ -1,11 +1,9 @@
-// import our Book model
 const db = require("../models");
 
 module.exports = {
 
   findAll: function(req, res) {
-    db
-      .Book
+    db.Book
       .find(req.query)
       .sort({date: -1})
       .then(dbBookData => res.json(dbBookData))
